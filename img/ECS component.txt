@@ -1,0 +1,23 @@
+ECS component
+E:Entity bản chất là một thực thể(ID) thay thế cho các đối tượng,thành phần trong class game
+// A simple type alias
+using Entity = std::uint32_t;
+
+// Used to define the size of arrays later on
+const Entity MAX_ENTITIES = 5000;
+
+Signature:Các thực thể đơn giản là ID nên cần một cách để theo dõi các Components mà Entity linked và những Component mà hệ thống quan tâm,
+sử dụng BitSet để mô tả các Signature cho từng Component
+Trong C++, std::bitset là một công cụ hữu hiệu trong việc lưu trữ,lưu các bit nhị phân
+EntityManager:Quản lý thực thể
+{
+Chịu trách nhiệm phân phối ID và quản lý xem ID nào hoạt động và ID nào không
+Sử dụng std::unique_ptr quản lý các Entity được gọi cấp phát trong runtime
+}
+Mảng thành phần:Component Array
+{
+Cần tạo một cấu trúc dữ liệu là một mảng "luôn được đóng gói,k lỗ hổng".toàn bộ mục đích của ECS là giữ dữ liệu được đóng gói trong bộ nhớ, nghĩa là bạn có thể lặp lại tất cả các chỉ mục trong mảng mà không cần bất kỳ loại kiểm tra “if(valid)” nào.Vì vậy khi một thực thể bị hủy mà dữ liệu cũ vẫn tồn tại trong mảng.Nếu hệ thống chạy mảng nó vẫn gặp phải dữ liệu cũ không có thực thể nào được link .Vì lý do này ta cần phải dữ cho mảng luôn chứa đầy dữ liệu hợp lệ:
+Khi một thực thể bị xóa,dữ liệu trong đó cần phải được 1 thực thể khác link tới.Lấy thực thể hợp lệ cuối cùng trong mảng thay thế vị trí thực thể đã xóa
+
+
+C:Component(thành phần) là những dữ liệu linked với các thực thể(ID)

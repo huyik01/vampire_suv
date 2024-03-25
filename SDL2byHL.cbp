@@ -34,14 +34,35 @@
 			<Add directory="C:/mingw_dev_lib/x86_64-w64-mingw32/include" />
 		</Compiler>
 		<Linker>
-			<Add option="-lmingw32 -lSDL2main -lSDL2 -lSDL2_image" />
+			<Add option="-lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf" />
 			<Add directory="C:/mingw_dev_lib/x86_64-w64-mingw32/lib" />
 		</Linker>
-		<Unit filename="SDL_no1.cpp" />
-		<Unit filename="SDL_no1.h" />
-		<Unit filename="firstHL.cpp" />
-		<Unit filename="leak2.cpp" />
-		<Unit filename="secondHL_image.cpp" />
+		<Unit filename="Collision.cpp" />
+		<Unit filename="Collision.h" />
+		<Unit filename="ECS/Animation.h" />
+		<Unit filename="ECS/ColliderComponent.h" />
+		<Unit filename="ECS/Components.h" />
+		<Unit filename="ECS/ECS.cpp" />
+		<Unit filename="ECS/ECS.h" />
+		<Unit filename="ECS/KeyboardController.h" />
+		<Unit filename="ECS/SpriteComponent.h" />
+		<Unit filename="ECS/TileComponent.h" />
+		<Unit filename="ECS/TransformComponent.h" />
+		<Unit filename="GameLoop.cpp" />
+		<Unit filename="GameLoop.h" />
+		<Unit filename="GameObject.cpp" />
+		<Unit filename="GameObject.h" />
+		<Unit filename="Map.cpp" />
+		<Unit filename="Map.h" />
+		<Unit filename="TextObject.cpp" />
+		<Unit filename="TextObject.h" />
+		<Unit filename="TextureManage.cpp" />
+		<Unit filename="TextureManage.h" />
+		<Unit filename="TextureMapManage.h" />
+		<Unit filename="TileComponent.h" />
+		<Unit filename="Vector2D.cpp" />
+		<Unit filename="Vector2D.h" />
+		<Unit filename="main.cpp" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
